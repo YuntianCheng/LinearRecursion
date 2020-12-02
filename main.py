@@ -40,8 +40,9 @@ if __name__ == "__main__":
         #print(sqrtCii)
         num3=sigma_*sqrtCii
         #print(num3)
-        absTi=betai/num3
-        print('absTi=',absTi)
+        ti=betai/num3
+        absTi=abs(ti)
+        print(absTi)
 
         
 
