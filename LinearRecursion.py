@@ -1,5 +1,6 @@
 from dealCsv import *
 import numpy as np
+import matplotlib.pyplot as plt
 
 class LR:
     def __init__(self,X,Y) -> None:
@@ -54,3 +55,21 @@ class LR:
         avgY=self.avgY()
         U=pow(np.linalg.norm(Y_-avgY),2)
         return U
+    
+    
+    # def best_Y_(self,F_1_a):
+
+    
+    def print_line_chart(self):
+        plt.figure()
+        x=np.arange(1,self.data_num()+1,1)
+        y1=self.conversion(self.Y_()).tolist()[0]
+        y2=self.conversion(self.Y).tolist()[0]
+        plt.plot(x,y1,color='r',label='estimate value')
+        plt.plot(x,y2,color='g',label='original')
+        plt.xlabel('player')
+        plt.ylabel('score')
+        plt.legend()
+        plt.show()
+
+
