@@ -31,11 +31,19 @@ if __name__ == "__main__":
     C=lr.inverse(lr.multiplication(X_t,lr.X))
     for i in range(1,p+1):
         betai=beta[i,0]
-        sqrtCii=math.sqrt(C[i,i])
-        num3=sigma_*sqrtCii
-        ti=betai/num3
-        absTi=abs(ti)
-        print('|t'+str(i)+'|=',absTi,absTi>1.960266)
+        betai_2=pow(betai,2)
+        sigma_2=Q/n_p_1
+        cii=C[i,i]
+        F_i=betai_2/(sigma_2*cii)
+        print('F'+str(i)+'=',F_i)
+    
+    # for i in range(1,p+1):
+    #     betai=beta[i,0]
+    #     sqrtCii=math.sqrt(C[i,i])
+    #     num3=sigma_*sqrtCii
+    #     ti=betai/num3
+    #     absTi=abs(ti)
+    #     print('|t'+str(i)+'|=',absTi,absTi>1.960266)
 
 
     # print('Beta=',pd.DataFrame(beta))
